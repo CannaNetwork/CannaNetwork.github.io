@@ -1,1 +1,15 @@
-{"ok":false,"snapshotTime":null,"server":{"online":false,"currentPlayers":0,"maxPlayers":500,"minecraftVersion":"1.21.4","uptimeSeconds":0},"players":[],"system":{}}
+{
+  "ok": true,
+  "snapshotTime": "2026-08-13T05:33:23.673273537Z",
+  "players": [{"username":"ItzOnlyFisher","world":"world","ping":316}],
+  "server": {
+    "online": true,
+    "currentPlayers": 1,
+    "maxPlayers": 10,
+    "minecraftVersion": "1.12.2",
+    "uptimeSeconds": 333,
+    "tps": {"oneMinute": 0.00},
+    "mspt": {"average": 0.00}
+  },
+  "system": {"ram": {"usedBytes": 896271352, "maxBytes": 5108662272}, "cpu": {"systemLoad": 4.22}}
+}
