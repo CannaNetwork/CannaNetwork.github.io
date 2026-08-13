@@ -1,2 +1,3 @@
-# CannaSMP
-CannaSMP public website, stats pages, and server information.
+# CannaAnarchy
+
+Public landing pages and server information for CannaAnarchy.
