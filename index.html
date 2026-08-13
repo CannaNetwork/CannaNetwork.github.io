@@ -1,150 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CannaSMP is a cannabis-themed Minecraft SMP with AFK shards, crates, leaderboards, economy, Discord linking, and custom server systems.">
-  <title>CannaSMP | Minecraft SMP Server</title>
+  <meta name="description" content="CannaAnarchy is a 1.21.4 Minecraft anarchy server. No resets, no claims, and a player-built world.">
+  <title>CannaAnarchy — Minecraft Anarchy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260628-pages1">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=cannaanarchy-1">
 </head>
-<body class="home-page">
+<body>
   <header class="site-header">
-    <a class="brand" href="./" aria-label="CannaSMP home">
-      <img src="assets/cannasmp-logo.png" alt="CannaSMP logo">
-      <span>CannaSMP</span>
-    </a>
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="stats/">Stats</a>
-      <a href="leaderboard/">Leaderboard</a>
-      <a href="#features">Features</a>
-      <a href="#commands">Commands</a>
-      <a href="#join">Join</a>
+    <a class="wordmark" href="./" aria-label="CannaAnarchy home"><span>CANNA</span>ANARCHY</a>
+    <nav aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#rules">Rules</a>
+      <a href="#play">Play</a>
     </nav>
+    <button class="header-copy" type="button" data-copy="130.12.156.44:25833"><span>Join now</span><b>↗</b></button>
   </header>
 
-  <main class="home-main">
+  <main>
     <section class="hero" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow">Cannabis-themed Minecraft SMP</p>
-        <h1>CannaSMP</h1>
-        <p class="hero-text">A polished SMP with AFK shards, custom crates, leaderboards, economy, Discord linking, KOTH, menus, and server-wide events.</p>
-        <div class="hero-actions">
-          <button class="copy-ip home-copy" type="button" data-copy="cannasmp.smpserver.net">
-            <span class="copy-label">Copy Server IP</span>
-            <strong>cannasmp.smpserver.net</strong>
-          </button>
-          <a class="button secondary" href="stats/">Live Stats</a>
-          <a class="button secondary" href="leaderboard/">Leaderboard</a>
-        </div>
-      </div>
-      <div class="hero-logo" aria-hidden="true">
-        <img src="assets/cannasmp-logo.png" alt="">
-      </div>
-    </section>
-
-    <section class="notice" aria-label="Mature theme notice">
-      <strong>Mature-theme notice:</strong>
-      <span>CannaSMP includes cannabis references, smoking references, swearing, tobacco references, and mature jokes. Players are shown an in-game notice before playing.</span>
-    </section>
-
-    <section class="section" id="features">
-      <div class="section-heading">
-        <p class="eyebrow">Server Systems</p>
-        <h2>Built around progression, stats, and player flow.</h2>
-      </div>
-      <div class="feature-grid">
-        <article class="feature-card">
-          <span>AFK</span>
-          <h3>AFK Shards</h3>
-          <p>Earn shards in the AFK world, then spend them on crate keys, amethyst tools, and virtual spawners.</p>
-        </article>
-        <article class="feature-card">
-          <span>KOTH</span>
-          <h3>KOTH Arena</h3>
-          <p>PvP-focused KOTH world with safe-zone protection, containment, and sidebar status for captures.</p>
-        </article>
-        <article class="feature-card">
-          <span>Stats</span>
-          <h3>Live Stats</h3>
-          <p>View public server status, online players, worlds, TPS, MSPT, RAM, CPU, and uptime.</p>
-        </article>
-        <article class="feature-card">
-          <span>Discord</span>
-          <h3>Account Linking</h3>
-          <p>Custom Discord bridge for chat sync, staff channels, slash-command linking, and role syncing.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="split-section" id="commands">
-      <div>
-        <p class="eyebrow">Useful Commands</p>
-        <h2>Quick shortcuts for the server.</h2>
-        <p>Use the player menu in game for the full list, including warps, economy, private messages, skins, auctions, and server notices.</p>
-      </div>
-      <div class="command-list" aria-label="Common server commands">
-        <code>/menu</code>
-        <code>/afk</code>
-        <code>/shards</code>
-        <code>/shardshop</code>
-        <code>/leaderboard</code>
-        <code>/shop</code>
-        <code>/rtp</code>
-        <code>/spawn</code>
-        <code>/warp crates</code>
-        <code>/warp afk</code>
-        <code>/ah</code>
-        <code>/pay</code>
-      </div>
-    </section>
-
-    <section class="section" id="crates">
-      <div class="section-heading">
-        <p class="eyebrow">Crates & Store</p>
-        <h2>Launch crates, cosmetics, and custom accessories.</h2>
-      </div>
-      <div class="crate-row">
-        <article>
-          <h3>Release Crate</h3>
-          <p>A starter launch crate for early players and simple server support.</p>
-        </article>
-        <article>
-          <h3>Golden Deluxe Crate</h3>
-          <p>Premium crate rewards focused on fun, cosmetics, and server-friendly extras.</p>
-        </article>
-        <article>
-          <h3>KOTH & Event Keys</h3>
-          <p>Reward competitive and event players with special keys and limited-time drops.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="join-panel" id="join">
-      <div>
-        <p class="eyebrow">Ready to play?</p>
-        <h2>Join CannaSMP</h2>
-        <p>Add the server in Minecraft and jump into spawn. PvP is disabled at spawn, and the custom menu will help you find the main systems.</p>
-      </div>
-      <div class="join-actions">
-        <button class="copy-ip home-copy large" type="button" data-copy="cannasmp.smpserver.net">
-          <span class="copy-label">Copy IP</span>
-          <strong>cannasmp.smpserver.net</strong>
+      <div class="grid-glow" aria-hidden="true"></div>
+      <p class="kicker"><i></i> Minecraft Java · 1.21.4</p>
+      <h1>MAKE YOUR<br><em>OWN</em> HISTORY.</h1>
+      <p class="hero-copy">A raw Minecraft anarchy world. No claims. No resets. No hand-holding. Just survival, alliances, betrayals, and the builds that outlast everyone.</p>
+      <div class="hero-actions">
+        <button class="ip-card" type="button" data-copy="130.12.156.44:25833">
+          <span>Java server address</span>
+          <strong>130.12.156.44:25833</strong>
+          <small class="copy-label">Click to copy</small>
         </button>
-        <a class="button" href="stats/">Live Stats</a>
+        <a class="ghost-button" href="#about">Explore the server <span>↓</span></a>
       </div>
+      <div class="hero-meta">
+        <span><b>01</b> Always evolving</span>
+        <span><b>02</b> Player-driven</span>
+        <span><b>03</b> No world reset</span>
+      </div>
+    </section>
+
+    <section class="statement" id="about">
+      <p class="section-label">The world is yours</p>
+      <h2>NOT A SERVER<br>YOU <em>FINISH.</em></h2>
+      <div class="statement-copy">
+        <p>CannaAnarchy is built for the stories players create themselves. Find your people, build something impossible, or disappear beyond the highways.</p>
+        <p>The map keeps its scars. Every ruined base, monument, stash hunt and war becomes part of the world for the next person to find.</p>
+      </div>
+    </section>
+
+    <section class="features" aria-label="Server features">
+      <article><span>01</span><h3>True anarchy</h3><p>No land claims or protected towns. Your build is as safe as you make it.</p></article>
+      <article><span>02</span><h3>One persistent world</h3><p>There are no planned map resets. Leave your mark for years, not weeks.</p></article>
+      <article><span>03</span><h3>Custom mechanics</h3><p>Distinct server systems, including the CannaDupe grindstone mechanic.</p></article>
+      <article><span>04</span><h3>Modern survival</h3><p>Built on Minecraft 1.21.4 with support for a range of client versions.</p></article>
+    </section>
+
+    <section class="rules" id="rules">
+      <div><p class="section-label">Keep it playable</p><h2>FEW RULES.<br><em>REAL</em> CONSEQUENCES.</h2></div>
+      <ol>
+        <li><b>01</b><span>No cheats that damage the server or other players’ connections.</span></li>
+        <li><b>02</b><span>No spam or exploits that create excessive lag.</span></li>
+        <li><b>03</b><span>Everything else is part of the story. Play at your own risk.</span></li>
+      </ol>
+    </section>
+
+    <section class="play" id="play">
+      <p class="section-label">Start here</p>
+      <h2>ENTER THE<br><em>WASTELAND.</em></h2>
+      <div class="play-grid">
+        <div><span>Version</span><strong>1.21.4</strong></div>
+        <div><span>Edition</span><strong>Java</strong></div>
+        <div><span>Network</span><strong>CannaAnarchy</strong></div>
+      </div>
+      <button class="join-button" type="button" data-copy="130.12.156.44:25833"><span>Copy server IP</span><strong>130.12.156.44:25833</strong><small class="copy-label">Click to copy</small></button>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <span>CannaSMP</span>
-    <a href="stats/">Stats</a>
-    <a href="leaderboard/">Leaderboard</a>
-    <a href="https://cannasmp.tebex.io">Store</a>
-  </footer>
-
-  <script src="app.js?v=20260628-pages1"></script>
+  <footer><span>© 2026 CannaAnarchy</span><a href="#home">Back to top ↑</a></footer>
+  <script src="app.js?v=cannaanarchy-1"></script>
 </body>
 </html>
