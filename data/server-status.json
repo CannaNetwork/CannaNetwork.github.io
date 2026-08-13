@@ -3,7 +3,7 @@
   "snapshotTime": null,
   "server": {
     "online": false,
-    "publicHost": "130.12.156.44:25833",
+    "publicHost": "",
     "minecraftVersion": "1.21.4",
     "motd": "CannaAnarchy",
     "currentPlayers": 0,
