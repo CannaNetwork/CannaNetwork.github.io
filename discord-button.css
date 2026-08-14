@@ -1,0 +1,12 @@
+nav .discord-button {
+  margin: -8px -11px;
+  padding: 8px 11px;
+  background: var(--acid);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+nav .discord-button:hover {
+  background: #d0ff69;
+  color: var(--ink);
+}
