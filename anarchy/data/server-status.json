@@ -1,15 +1,15 @@
 {
   "ok": true,
-  "snapshotTime": "2026-08-14T06:40:56.051999181Z",
-  "players": [],
+  "snapshotTime": "2026-08-14T08:01:10.400350485Z",
+  "players": [{"username":"CannaAnarchy","world":"world","ping":310}],
   "server": {
     "online": true,
-    "currentPlayers": 0,
+    "currentPlayers": 1,
     "maxPlayers": 50,
     "minecraftVersion": "1.12.2",
-    "uptimeSeconds": 34,
+    "uptimeSeconds": 2154,
     "tps": {"oneMinute": 20.00},
     "mspt": {"average": 50.00}
   },
-  "system": {"ram": {"usedBytes": 1140770032, "maxBytes": 5108662272}, "cpu": {"systemLoad": 2.47}}
+  "system": {"ram": {"usedBytes": 1268807848, "maxBytes": 5108662272}, "cpu": {"systemLoad": 2.91}}
 }
