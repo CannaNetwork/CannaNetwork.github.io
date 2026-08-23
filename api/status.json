@@ -1,0 +1,11 @@
+{
+  "ok": false,
+  "snapshotTime": null,
+  "server": {
+    "online": false,
+    "minecraftVersion": "1.21.4",
+    "currentPlayers": 0,
+    "maxPlayers": 50
+  },
+  "players": []
+}

@@ -18,7 +18,7 @@ fetch('../data/server-status.json', { cache: 'no-store' })
     set('ram', `${bytes(sys.ram?.usedBytes)} / ${bytes(sys.ram?.maxBytes)}`);
     set('cpu', sys.cpu?.systemLoad !== undefined ? Number(sys.cpu.systemLoad).toFixed(1) : '--');
     set('uptime', uptime(s.uptimeSeconds));
-    set('version', '1.12.2');
+    set('version', s.minecraftVersion || '--');
     set('updated', data.snapshotTime ? `Updated ${new Date(data.snapshotTime).toLocaleString()}` : 'Waiting for the first snapshot…');
 
     const list = document.querySelector('[data-player-list]');
