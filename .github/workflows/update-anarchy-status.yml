@@ -14,6 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Fetch Anarchy status snapshot
+        # Status data is optional: keep the last good snapshot during a server restart
+        # instead of failing the whole workflow and notifying everyone by email.
+        continue-on-error: true
         env:
           SFTP_HOST: ${{ secrets.CANNAANARCHY_SFTP_HOST }}
           SFTP_PORT: ${{ secrets.CANNAANARCHY_SFTP_PORT }}
@@ -30,13 +33,14 @@ jobs:
           transport.connect(username=os.environ['SFTP_USERNAME'], password=os.environ['SFTP_PASSWORD'])
           sftp = paramiko.SFTPClient.from_transport(transport)
           sftp.get('/plugins/CannaAnarchyStatus/server-status.json', 'anarchy/data/server-status.json')
+          sftp.get('/plugins/CannaAnarchyStatus/server-status.json', 'api/status.json')
           sftp.close(); transport.close()
           PY
       - name: Publish changed snapshot
         run: |
-          if git diff --quiet -- anarchy/data/server-status.json; then exit 0; fi
+          if git diff --quiet -- anarchy/data/server-status.json api/status.json; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add anarchy/data/server-status.json
+          git add anarchy/data/server-status.json api/status.json
           git commit -m "Update CannaAnarchy live status"
           git push
