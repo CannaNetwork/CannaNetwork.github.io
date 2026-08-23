@@ -14,6 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Fetch Anarchy status snapshot
+        # Status data is optional: keep the last good snapshot during a server restart
+        # instead of failing the whole workflow and notifying everyone by email.
+        continue-on-error: true
         env:
           SFTP_HOST: ${{ secrets.CANNAANARCHY_SFTP_HOST }}
           SFTP_PORT: ${{ secrets.CANNAANARCHY_SFTP_PORT }}
