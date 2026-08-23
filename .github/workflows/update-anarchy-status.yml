@@ -2,7 +2,7 @@ name: Update CannaAnarchy Status
 
 on:
   schedule:
-    - cron: "*/2 * * * *"
+    - cron: "* * * * *"
   workflow_dispatch:
 
 permissions:
