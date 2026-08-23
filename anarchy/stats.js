@@ -1,38 +1,5 @@
-const bytes = n => n ? `${(n / 1024 / 1024 / 1024).toFixed(1)} GB` : '--';
-const uptime = s => {
-  s = Number(s || 0);
-  const d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
-  return d ? `${d}d ${h}h` : h ? `${h}h ${m}m` : `${m}m`;
-};
-const set = (key, value) => document.querySelector(`[data-${key}]`).textContent = value;
-
-fetch('../data/server-status.json', { cache: 'no-store' })
-  .then(r => { if (!r.ok) throw Error(); return r.json(); })
-  .then(data => {
-    const s = data.server || {}, sys = data.system || {}, online = data.ok && s.online;
-    set('status', online ? 'Online' : 'Offline');
-    set('players', `${s.currentPlayers || 0}/${s.maxPlayers || 0}`);
-    // Folia has independent region ticks, so a single TPS/MSPT is not meaningful.
-    set('tps', s.tps?.oneMinute ? Number(s.tps.oneMinute).toFixed(2) : 'Folia N/A');
-    set('mspt', s.mspt?.average ? `${Number(s.mspt.average).toFixed(1)} ms` : 'Folia N/A');
-    set('ram', `${bytes(sys.ram?.usedBytes)} / ${bytes(sys.ram?.maxBytes)}`);
-    set('cpu', sys.cpu?.systemLoad !== undefined ? Number(sys.cpu.systemLoad).toFixed(1) : '--');
-    set('uptime', uptime(s.uptimeSeconds));
-    set('version', s.minecraftVersion || '--');
-    set('updated', data.snapshotTime ? `Updated ${new Date(data.snapshotTime).toLocaleString()}` : 'Waiting for the first snapshot…');
-
-    const list = document.querySelector('[data-player-list]');
-    list.innerHTML = '';
-    const players = data.players || [];
-    if (!players.length) list.textContent = 'Nobody is online right now.';
-    players.forEach(p => {
-      const el = document.createElement('div');
-      el.className = 'player';
-      el.innerHTML = `<div><strong>${p.username}</strong><span>Online</span></div><b>${p.ping ?? '--'}ms</b>`;
-      list.append(el);
-    });
-  })
-  .catch(() => {
-    set('status', 'Offline');
-    document.querySelector('[data-player-list]').textContent = 'No status snapshot is available yet.';
-  });
+const bytes=n=>n?`${(n/1024**3).toFixed(1)} GB`:'--';
+const uptime=seconds=>{const s=Number(seconds||0),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60);return d?`${d}d ${h}h ${m}m`:h?`${h}h ${m}m`:`${m}m`};
+const set=(key,value)=>document.querySelector(`[data-${key}]`).textContent=value;
+const titleCase=name=>name==='world'||name==='overworld'?'Overworld':name[0].toUpperCase()+name.slice(1);
+fetch('../data/server-status.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(data=>{const s=data.server||{},sys=data.system||{},online=data.ok&&s.online;set('status',online?'ONLINE':'OFFLINE');set('players',`${s.currentPlayers||0}/${s.maxPlayers||0}`);set('uptime',uptime(s.uptimeSeconds));set('ram',`${bytes(sys.ram?.usedBytes)} / ${bytes(sys.ram?.maxBytes)}`);set('cpu',sys.cpu?.systemLoad!==undefined?`${Number(sys.cpu.systemLoad).toFixed(1)}%`:'--');set('version',s.minecraftVersion||'--');set('updated',data.snapshotTime?`Updated ${new Date(data.snapshotTime).toLocaleString()}`:'Waiting for live data…');const players=data.players||[],list=document.querySelector('[data-player-list]');list.innerHTML='';if(!players.length)list.textContent='Nobody is online right now.';players.forEach(p=>{const el=document.createElement('div');el.className='player';el.innerHTML=`<div><strong>${p.username}</strong><span>${p.world||'Online'}</span></div><b>${p.ping??'--'}ms</b>`;list.append(el)});const entries=Object.entries(data.worlds||{});if(entries.length){document.querySelector('[data-world-section]').hidden=false;const grid=document.querySelector('[data-world-grid]');entries.forEach(([name,world])=>{const disk=world.disk||{},percent=Math.min(100,Math.max(0,Number(disk.percent_used||0))),card=document.createElement('article');card.className='world-card';card.innerHTML=`<h3>${titleCase(name)}</h3><p>Size: ${bytes(world.size_bytes)}</p><p>Disk: ${bytes(disk.free_bytes)} free</p><div class="bar"><i style="width:${percent}%"></i></div><small>${percent.toFixed(1)}% used</small>`;grid.append(card)})}}).catch(()=>{set('status','OFFLINE');document.querySelector('[data-player-list]').textContent='No status snapshot is available yet.'});
