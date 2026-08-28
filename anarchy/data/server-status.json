@@ -1,15 +1,15 @@
 {
   "ok": true,
-  "snapshotTime": "2026-08-28T00:34:27.341745053Z",
-  "players": [{"username":"HighwaySlave","world":"world","ping":53},{"username":"xooteryt","world":"world_nether","ping":38}],
+  "snapshotTime": "2026-08-28T12:10:37.391727700Z",
+  "players": [{"username":"HighwaySlave","world":"world","ping":53}],
   "server": {
     "online": true,
-    "currentPlayers": 2,
+    "currentPlayers": 1,
     "maxPlayers": 50,
     "minecraftVersion": "1.21.4",
-    "uptimeSeconds": 421567,
+    "uptimeSeconds": 463337,
     "tps": {"oneMinute": 20.00},
-    "mspt": {"average": 49.97}
+    "mspt": {"average": 49.99}
   },
-  "system": {"ram": {"usedBytes": 2490069416, "maxBytes": 11240734720}, "cpu": {"systemLoad": 1.74}}
+  "system": {"ram": {"usedBytes": 1334009240, "maxBytes": 11240734720}, "cpu": {"systemLoad": 4.31}}
 }
