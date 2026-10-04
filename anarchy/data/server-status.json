@@ -1,15 +1,15 @@
 {
   "ok": true,
-  "snapshotTime": "2026-10-04T20:03:54.148752484Z",
+  "snapshotTime": "2026-10-04T23:02:04.148759370Z",
   "players": [],
   "server": {
     "online": true,
     "currentPlayers": 0,
     "maxPlayers": 50,
     "minecraftVersion": "1.21.4",
-    "uptimeSeconds": 740890,
+    "uptimeSeconds": 751580,
     "tps": {"oneMinute": 20.00},
-    "mspt": {"average": 50.00}
+    "mspt": {"average": 49.99}
   },
-  "system": {"ram": {"usedBytes": 784939824, "maxBytes": 11240734720}, "cpu": {"systemLoad": 0.94}}
+  "system": {"ram": {"usedBytes": 1183498592, "maxBytes": 11240734720}, "cpu": {"systemLoad": 1.72}}
 }
