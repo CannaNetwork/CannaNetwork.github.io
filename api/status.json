@@ -1,15 +1,15 @@
 {
   "ok": true,
-  "snapshotTime": "2026-10-12T09:46:10.448748795Z",
-  "players": [],
+  "snapshotTime": "2026-10-12T19:23:40.498756236Z",
+  "players": [{"username":"Skittlesjace","world":"world_nether","ping":147}],
   "server": {
     "online": true,
-    "currentPlayers": 0,
+    "currentPlayers": 1,
     "maxPlayers": 50,
     "minecraftVersion": "1.21.4",
-    "uptimeSeconds": 1395027,
+    "uptimeSeconds": 1429677,
     "tps": {"oneMinute": 20.00},
-    "mspt": {"average": 50.00}
+    "mspt": {"average": 49.99}
   },
-  "system": {"ram": {"usedBytes": 928300984, "maxBytes": 11240734720}, "cpu": {"systemLoad": 1.24}}
+  "system": {"ram": {"usedBytes": 1092167376, "maxBytes": 11240734720}, "cpu": {"systemLoad": 1.72}}
 }
